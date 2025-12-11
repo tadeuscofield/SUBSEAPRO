@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SubseaPro - Soluções em Engenharia Onshore e Offshore para os segmentos Naval e Oil & Gas. Innovation Through Solutions.">
+    <meta name="keywords" content="subsea, offshore, onshore, engenharia, oil gas, naval, tubulação, inspeção, projetos">
+    <title>SubseaPro | Soluções em Engenharia Onshore e Offshore</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'subsea-blue': '#1e3a5f',
+                        'subsea-light': '#3b82f6',
+                        'subsea-gold': '#d4a853',
+                        'subsea-dark': '#0f172a',
+                        'subsea-gray': '#64748b',
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Hero Video Background */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 58, 95, 0.85) 0%, rgba(15, 23, 42, 0.75) 100%);
+            z-index: 0;
+        }
+
+        /* Animated Text */
+        .animate-word {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Service Cards Hover */
+        .service-card {
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .service-card .icon-wrapper {
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .icon-wrapper {
+            background-color: #1e3a5f;
+            color: white;
+        }
+
+        /* Navigation */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #d4a853;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Scroll Progress */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #1e3a5f, #d4a853);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1e3a5f;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6;
+        }
+
+        /* Pillar Cards */
+        .pillar-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+
+        .pillar-card:hover {
+            border-top-color: #1e3a5f;
+            transform: translateY(-5px);
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        /* Stats Counter Animation */
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1e3a5f;
+        }
+
+        /* Image Hover Effects */
+        .img-hover-zoom {
+            overflow: hidden;
+        }
+
+        .img-hover-zoom img {
+            transition: transform 0.5s ease;
+        }
+
+        .img-hover-zoom:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center space-x-2">
+                    <div class="text-white font-montserrat">
+                        <span class="text-2xl font-bold">subsea</span><span class="text-subsea-gold text-2xl font-bold">Pro</span>
+                        <p class="text-xs text-gray-300 -mt-1">onshore & offshore solutions</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-white hover:text-subsea-gold transition-colors font-medium">Home</a>
+                    <a href="#about" class="nav-link text-white hover:text-subsea-gold transition-colors font-medium">Quem Somos</a>
+                    <a href="#services" class="nav-link text-white hover:text-subsea-gold transition-colors font-medium">Serviços</a>
+                    <a href="#expertise" class="nav-link text-white hover:text-subsea-gold transition-colors font-medium">Expertise</a>
+                    <a href="#values" class="nav-link text-white hover:text-subsea-gold transition-colors font-medium">Valores</a>
+                    <a href="#contact" class="bg-subsea-gold text-subsea-dark px-6 py-2.5 rounded-full font-semibold hover:bg-white transition-all duration-300">
+                        Fale Conosco
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="lg:hidden text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed inset-y-0 right-0 w-72 bg-subsea-dark z-50 lg:hidden">
+        <div class="p-6">
+            <button id="closeMenu" class="absolute top-6 right-6 text-white text-2xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="mt-16 flex flex-col space-y-6">
+                <a href="#home" class="text-white text-lg hover:text-subsea-gold transition-colors">Home</a>
+                <a href="#about" class="text-white text-lg hover:text-subsea-gold transition-colors">Quem Somos</a>
+                <a href="#services" class="text-white text-lg hover:text-subsea-gold transition-colors">Serviços</a>
+                <a href="#expertise" class="text-white text-lg hover:text-subsea-gold transition-colors">Expertise</a>
+                <a href="#values" class="text-white text-lg hover:text-subsea-gold transition-colors">Valores</a>
+                <a href="#contact" class="bg-subsea-gold text-subsea-dark px-6 py-3 rounded-full font-semibold text-center hover:bg-white transition-all">
+                    Fale Conosco
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section flex items-center justify-center">
+        <!-- Video Background (usando imagem como fallback) -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1518623489648-a173ef7824f3?q=80&w=2062');">
+        </div>
+        <div class="hero-overlay"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-subsea-gold font-semibold text-lg mb-4 tracking-wider" data-aos="fade-down">
+                INNOVATION THROUGH SOLUTIONS
+            </p>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-montserrat leading-tight">
+                <span class="animate-word" style="animation-delay: 0.1s">Impulsionando</span>
+                <span class="animate-word" style="animation-delay: 0.2s">a</span>
+                <span class="animate-word" style="animation-delay: 0.3s">nova</span>
+                <span class="animate-word" style="animation-delay: 0.4s">era</span><br>
+                <span class="animate-word text-subsea-gold" style="animation-delay: 0.5s">subsea</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="600">
+                Soluções em Engenharia Onshore e Offshore para os segmentos Naval e Oil & Gas
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="800">
+                <a href="#about" class="bg-subsea-gold text-subsea-dark px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition-all duration-300 flex items-center justify-center gap-2">
+                    Conheça nossa história <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#services" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-subsea-dark transition-all duration-300">
+                    Nossos Serviços
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-white text-3xl">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 lg:py-32 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Image -->
+                <div class="relative" data-aos="fade-right">
+                    <div class="img-hover-zoom rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2076"
+                             alt="Engenharia Offshore"
+                             class="w-full h-[500px] object-cover">
+                    </div>
+                    <div class="absolute -bottom-8 -right-8 bg-subsea-blue text-white p-6 rounded-xl shadow-xl hidden md:block">
+                        <p class="text-4xl font-bold text-subsea-gold">2024</p>
+                        <p class="text-sm">Fundação</p>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div data-aos="fade-left">
+                    <span class="text-subsea-gold font-semibold tracking-wider">QUEM SOMOS</span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-subsea-dark mt-2 mb-6 font-montserrat">
+                        Um legado para futuras gerações
+                    </h2>
+                    <div class="space-y-4 text-gray-600 text-lg">
+                        <p>
+                            A <strong class="text-subsea-blue">SubseaPro</strong>, fundada em 2024, nasceu com a missão de oferecer soluções inovadoras e de alta qualidade. Nossa história, embora recente, é sustentada por uma vasta experiência acumulada pelo nosso fundador.
+                        </p>
+                        <p>
+                            Somos uma empresa de engenharia com expertise onshore e offshore na oferta de serviços, produtos, tecnologias e conhecimentos específicos para atender às necessidades e desafios dos <strong>segmentos Naval e de Oil & Gas</strong>.
+                        </p>
+                        <p>
+                            Nosso compromisso é fornecer soluções inovadoras, garantindo eficácia e eficiência em todas as etapas do projeto e entrega com satisfação na qualidade, no escopo, no custo e no prazo.
+                        </p>
+                    </div>
+                    <a href="#expertise" class="inline-flex items-center gap-2 mt-8 text-subsea-blue font-semibold hover:text-subsea-gold transition-colors text-lg">
+                        Saiba mais sobre nossa expertise <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-subsea-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-5xl font-bold text-subsea-gold mb-2">30+</div>
+                    <p class="text-white text-lg">Anos de Experiência</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-5xl font-bold text-subsea-gold mb-2">100+</div>
+                    <p class="text-white text-lg">Projetos Realizados</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-5xl font-bold text-subsea-gold mb-2">5</div>
+                    <p class="text-white text-lg">Áreas de Atuação</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-5xl font-bold text-subsea-gold mb-2">1º</div>
+                    <p class="text-white text-lg">MLP na América Latina</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-subsea-gold font-semibold tracking-wider">NOSSOS SERVIÇOS</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-subsea-dark mt-2 mb-6 font-montserrat">
+                    Soluções que transformam o seu negócio
+                </h2>
+                <p class="text-gray-600 text-lg">
+                    Na SubseaPro, acreditamos que a inovação é a chave para impulsionar negócios e enfrentar os desafios mais complexos dos segmentos Naval e Offshore.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-wrapper w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-project-diagram text-2xl text-subsea-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-subsea-dark mb-4">Consultoria em Gestão de Projetos</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-subsea-gold mt-1"></i>
+                            <span>Diligenciamento e inspeção na fabricação de MLP e Tubo Cladeado</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-subsea-gold mt-1"></i>
+                            <span>Levantamento em campo com detalhamento para fabricação</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-subsea-gold mt-1"></i>
+                            <span>Elaboração de As Built com ou sem modelagem 3D</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-wrapper w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-cogs text-2xl text-subsea-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-subsea-dark mb-4">Projetos de Tubulação/Equipamentos</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-subsea-gold mt-1"></i>
+                            <span>Elaboração e execução de projetos básicos e detalhados</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-subsea-gold mt-1"></i>
+                            <span>Reparo e manutenção de tubulação e acessórios</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-subsea-gold mt-1"></i>
+                            <span>Propostas técnicas de válvulas, bombas e equipamentos</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon-wrapper w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-search text-2xl text-subsea-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-subsea-dark mb-4">Inspeção e Diligenciamento</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-subsea-gold mt-1"></i>
+                            <span>Inspeção de tubulações e equipamentos</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-subsea-gold mt-1"></i>
+                            <span>Elaboração de relatórios técnicos completos</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-subsea-gold mt-1"></i>
+                            <span>Conformidade com padrões de qualidade e segurança</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="400">
+                    <div class="icon-wrapper w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-database text-2xl text-subsea-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-subsea-dark mb-4">Consultoria em Banco de Dados</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-subsea-gold mt-1"></i>
+                            <span>Criação e estruturação de BD conforme SFI Detail Code</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-subsea-gold mt-1"></i>
+                            <span>Manutenção e atualizações de banco de dados</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-subsea-gold mt-1"></i>
+                            <span>Treinamentos para capacitação de equipes</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="500">
+                    <div class="icon-wrapper w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-flask text-2xl text-subsea-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-subsea-dark mb-4">Inspeção e Testes de Materiais</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-subsea-gold mt-1"></i>
+                            <span>Planos de Ensaio para Testes Destrutivos e NDTs</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-subsea-gold mt-1"></i>
+                            <span>Diligenciamento de Ensaios Destrutivos</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-subsea-gold mt-1"></i>
+                            <span>Alinhamento aos requisitos técnicos e normativos</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CTA Card -->
+                <div class="bg-gradient-to-br from-subsea-blue to-subsea-dark rounded-2xl p-8 shadow-lg flex flex-col justify-center" data-aos="fade-up" data-aos-delay="600">
+                    <h3 class="text-2xl font-bold text-white mb-4">Precisa de uma solução personalizada?</h3>
+                    <p class="text-gray-300 mb-6">Entre em contato conosco para discutir seu projeto específico.</p>
+                    <a href="#contact" class="bg-subsea-gold text-subsea-dark px-6 py-3 rounded-full font-bold text-center hover:bg-white transition-all duration-300">
+                        Solicitar Proposta
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="py-20 lg:py-32 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-subsea-gold font-semibold tracking-wider">NOSSA EXPERTISE</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-subsea-dark mt-2 mb-6 font-montserrat">
+                    Excelência em Gestão de Projetos
+                </h2>
+                <p class="text-gray-600 text-lg">
+                    Nossa consultoria em gestão de projetos oferece uma abordagem ampla, focada em quatro pilares essenciais.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Pillar 1 -->
+                <div class="pillar-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-bullseye text-2xl text-subsea-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-subsea-dark mb-3">Escopo</h3>
+                    <p class="text-gray-600">
+                        Definimos e gerenciamos o escopo de forma clara e detalhada, utilizando a Estrutura Analítica de Projetos (EAP) para facilitar o controle e a comunicação eficaz.
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="pillar-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-green-50 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-dollar-sign text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-subsea-dark mb-3">Custo</h3>
+                    <p class="text-gray-600">
+                        Realizamos estimativas precisas de custo e monitoramento contínuo do orçamento, garantindo a redução de custos e o uso eficiente dos recursos.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="pillar-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-orange-50 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-clock text-2xl text-orange-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-subsea-dark mb-3">Prazo</h3>
+                    <p class="text-gray-600">
+                        Utilizamos técnicas avançadas como o Método do Caminho Crítico (CPM) e a Análise de Valor Agregado (EVA) para gerenciar projetos dentro dos cronogramas.
+                    </p>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="pillar-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 bg-purple-50 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-certificate text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-subsea-dark mb-3">Qualidade</h3>
+                    <p class="text-gray-600">
+                        Desenvolvemos planos detalhados de qualidade que incluem critérios de aceitação, inspeções e testes rigorosos em todas as fases de entrega.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Content -->
+                <div data-aos="fade-right">
+                    <span class="text-subsea-gold font-semibold tracking-wider">CARTA DO FUNDADOR</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-subsea-dark mt-2 mb-6 font-montserrat">
+                        Marcelo Barreto
+                    </h2>
+                    <p class="text-subsea-blue font-semibold mb-4">Diretor de Projetos da SubseaPro</p>
+                    <div class="space-y-4 text-gray-600">
+                        <p>
+                            "A SubseaPro não é apenas resultado de um sonho de empreendimento, ela é a expressão concreta de uma visão estratégica fundada na crença inabalável de que o verdadeiro diferencial competitivo está no conhecimento e na valorização do capital intelectual."
+                        </p>
+                        <p>
+                            Minha jornada profissional iniciou como Técnico em Mecânica, formado pelo CIAGA, nos estaleiros Emaq e Ishibras. Como Engenheiro Mecânico e Especialista em Gestão de Projetos, tive a honra de participar de projetos de relevância nacional.
+                        </p>
+                        <p>
+                            Destaco a liderança na gestão de transferência de tecnologia francesa para a construção de submarinos brasileiros pela ICN, e o gerenciamento do Projeto Búzios 5 - <strong>marco nacional de 1º projeto fabril de MLP totalmente concluído e entregue na América Latina</strong>.
+                        </p>
+                    </div>
+                    <div class="mt-8 flex items-center gap-4">
+                        <a href="https://linkedin.com/company/subseapro" target="_blank" class="text-subsea-blue hover:text-subsea-gold transition-colors">
+                            <i class="fab fa-linkedin text-3xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div class="relative" data-aos="fade-left">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974"
+                             alt="Marcelo Barreto - Fundador SubseaPro"
+                             class="w-full h-[500px] object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-subsea-gold p-6 rounded-xl shadow-xl">
+                        <i class="fas fa-quote-left text-4xl text-subsea-dark opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section id="values" class="py-20 lg:py-32 bg-subsea-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-subsea-gold font-semibold tracking-wider">O QUE NOS MOVE</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-6 font-montserrat">
+                    Princípios, Valores e o Futuro
+                </h2>
+                <p class="text-gray-300 text-lg">
+                    "Na SubseaPro acreditamos que o verdadeiro sucesso é aquele que beneficia a todos - clientes, colaboradores, comunidades e o planeta."
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Value 1 -->
+                <div class="text-center p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-subsea-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-lightbulb text-3xl text-subsea-dark"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Inovação</h3>
+                    <p class="text-gray-300">
+                        Para nós, inovar significa reimaginar os processos, explorar a diversidade de perspectivas, o uso de novas tecnologias e aplicar metodologias que promovam a eficiência.
+                    </p>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="text-center p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-subsea-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users text-3xl text-subsea-dark"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Diversidade</h3>
+                    <p class="text-gray-300">
+                        Acreditamos que a diversidade não é apenas um valor moral, mas uma vantagem competitiva. Soluções inovadoras nascem da pluralidade de ideias e perspectivas.
+                    </p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="text-center p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-subsea-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-leaf text-3xl text-subsea-dark"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Sustentabilidade</h3>
+                    <p class="text-gray-300">
+                        Nosso compromisso é aplicar a gestão do conhecimento como pilar para construir um futuro mais inovador, seguro e sustentável para as futuras gerações.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center" data-aos="fade-up">
+                <blockquote class="text-2xl italic text-gray-300 max-w-4xl mx-auto">
+                    "Transformar desafios em soluções que não apenas resolvam problemas da engenharia, mas que também construam um futuro melhor para todos - essa é a essência da SubseaPro."
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 lg:py-32 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+                <!-- Contact Info -->
+                <div data-aos="fade-right">
+                    <span class="text-subsea-gold font-semibold tracking-wider">FALE CONOSCO</span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-subsea-dark mt-2 mb-6 font-montserrat">
+                        Contatos que transformam o seu negócio
+                    </h2>
+                    <p class="text-gray-600 text-lg mb-8">
+                        Estamos prontos para atender às suas necessidades e discutir como podemos agregar valor ao seu projeto.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-subsea-blue rounded-full flex items-center justify-center">
+                                <i class="fas fa-phone text-xl text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Telefone / WhatsApp</p>
+                                <a href="tel:+5521986250569" class="text-subsea-dark font-semibold text-lg hover:text-subsea-blue">+55 21 98625-0569</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-subsea-blue rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope text-xl text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">E-mail</p>
+                                <a href="mailto:comercial@subseapro.com.br" class="text-subsea-dark font-semibold text-lg hover:text-subsea-blue">comercial@subseapro.com.br</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-subsea-blue rounded-full flex items-center justify-center">
+                                <i class="fas fa-globe text-xl text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Website</p>
+                                <a href="https://www.subseapro.com.br" target="_blank" class="text-subsea-dark font-semibold text-lg hover:text-subsea-blue">www.subseapro.com.br</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-subsea-blue rounded-full flex items-center justify-center">
+                                <i class="fab fa-linkedin text-xl text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">LinkedIn</p>
+                                <a href="https://linkedin.com/company/subseapro" target="_blank" class="text-subsea-dark font-semibold text-lg hover:text-subsea-blue">linkedin.com/company/subseapro</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div data-aos="fade-left">
+                    <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-10">
+                        <h3 class="text-2xl font-bold text-subsea-dark mb-6">Envie sua mensagem</h3>
+                        <!-- Formulário com envio por email via Formspree -->
+                        <form id="contactForm" action="https://formspree.io/f/xqazbpvq" method="POST" class="space-y-6">
+                            <input type="hidden" name="_subject" value="Nova mensagem do site SubseaPro">
+                            <input type="hidden" name="_next" value="https://subseapro.com.br/obrigado.html">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Nome completo</label>
+                                <input type="text" name="nome" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-subsea-blue focus:border-transparent transition-all" placeholder="Seu nome">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">E-mail</label>
+                                <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-subsea-blue focus:border-transparent transition-all" placeholder="seu@email.com">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Telefone</label>
+                                <input type="tel" name="telefone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-subsea-blue focus:border-transparent transition-all" placeholder="(21) 99999-9999">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Assunto</label>
+                                <select name="assunto" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-subsea-blue focus:border-transparent transition-all">
+                                    <option>Consultoria em Gestão de Projetos</option>
+                                    <option>Projetos de Tubulação/Equipamentos</option>
+                                    <option>Inspeção e Diligenciamento</option>
+                                    <option>Consultoria em Banco de Dados</option>
+                                    <option>Inspeção e Testes de Materiais</option>
+                                    <option>Outro</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Mensagem</label>
+                                <textarea rows="4" name="mensagem" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-subsea-blue focus:border-transparent transition-all resize-none" placeholder="Descreva seu projeto ou necessidade..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-subsea-blue text-white py-4 rounded-lg font-bold text-lg hover:bg-subsea-dark transition-all duration-300 flex items-center justify-center gap-2">
+                                Enviar Mensagem <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        <p class="text-gray-500 text-sm mt-4 text-center">
+                            <i class="fas fa-lock mr-1"></i> Suas informações estão seguras e não serão compartilhadas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-subsea-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Logo & Description -->
+                <div class="lg:col-span-2">
+                    <div class="mb-6">
+                        <span class="text-3xl font-bold">subsea</span><span class="text-subsea-gold text-3xl font-bold">Pro</span>
+                        <p class="text-sm text-gray-400">onshore & offshore solutions</p>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Empresa de engenharia com expertise onshore e offshore, dedicada a oferecer soluções inovadoras para os segmentos Naval e de Oil & Gas.
+                    </p>
+                    <p class="text-subsea-gold font-semibold">INNOVATION THROUGH SOLUTIONS</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Links Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-subsea-gold transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-subsea-gold transition-colors">Quem Somos</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-subsea-gold transition-colors">Serviços</a></li>
+                        <li><a href="#expertise" class="text-gray-400 hover:text-subsea-gold transition-colors">Expertise</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-subsea-gold transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Serviços</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-gray-400 hover:text-subsea-gold transition-colors">Gestão de Projetos</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-subsea-gold transition-colors">Projetos de Tubulação</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-subsea-gold transition-colors">Inspeção e Diligenciamento</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-subsea-gold transition-colors">Banco de Dados</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-subsea-gold transition-colors">Testes de Materiais</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">&copy; 2024 SubseaPro. Todos os direitos reservados.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="https://linkedin.com/company/subseapro" target="_blank" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-subsea-gold transition-all">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://wa.me/5521986250569" target="_blank" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-subsea-gold transition-all">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:comercial@subseapro.com.br" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-subsea-gold transition-all">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-subsea-dark', 'shadow-lg');
+            } else {
+                navbar.classList.remove('bg-subsea-dark', 'shadow-lg');
+            }
+        });
+
+        // Scroll progress bar
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Form submission - mostra loading no botão
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            const btn = this.querySelector('button[type="submit"]');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            btn.disabled = true;
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
